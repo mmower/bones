@@ -1,0 +1,19 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#reading_taken_on').datepicker( {
+      dateFormat: 'yy-mm-dd',
+      firstDay: 1
+    });
+  });
+</script>
+<% form_for @reading do |form| %>
+  <div class="field">
+    <%= form.label :taken_on, 'Taken On' %>:
+    <%= form.text_field :taken_on %><br />
+  </div>
+  <div class="field">
+    <%= form.label :weight, 'Weight' %>:
+    <%= form.text_field :weight %><br />
+  </div>
+  <%= submit_tag %>
+<% end %>

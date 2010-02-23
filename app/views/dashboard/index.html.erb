@@ -1,0 +1,4 @@
+
+<% points = Meal.find( :all, :conditions => ['eaten_on = ?',Date.today] ).inject( 0.0 ) { |total,meal| total + meal.points_value } %>
+
+Points: <%= "%.1f" % points -%>

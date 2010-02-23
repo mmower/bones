@@ -1,0 +1,46 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#meal_eaten_on').datepicker( {
+      dateFormat: 'yy-mm-dd',
+      firstDay: 1
+    });
+    
+    $('#meal_kcal').calculator({
+      showOn: 'both', buttonImageOnly: true, buttonImage: '/images/calculator.png'
+    });
+    // $('#meal_fat').calculator({
+    //   showOn: 'both', buttonImageOnly: true, buttonImage: '/images/calculator.png'
+    // });
+    // $('#meal_points').calculator({
+    //   showOn: 'both', buttonImageOnly: true, buttonImage: '/images/calculator.png'
+    // });
+  });
+</script>
+<% form_for @meal do |form| %>
+  <%= form.hidden_field :week_id %>
+  <div class="field">
+    <%= form.label :eaten_on, 'Eaten On' %>:
+    <%= form.text_field :eaten_on %><br />
+  </div>
+  <div class="field">
+    <%= form.label :kind, 'Kind' %>:
+    <%= form.select :kind, [['Breakfast',1],['Lunch',2],['Tea',3],['Dinner',4],['Supper',5],['Snack',6]] %><br />
+  </div>
+  <div class="field">
+    <%= form.label :description, 'Description' %>:
+    <%= form.text_field :description %><br />
+  </div>
+  <div class="field">
+    <%= form.label :kcal, 'kcal' %>:
+    <%= form.text_field :kcal %><br />
+  </div>
+  <div class="field">
+    <%= form.label :fat, 'Fat' %>:
+    <%= form.text_field :fat %><br />
+  </div>
+  <div class="field">
+    <%= form.label :points, 'Points' %>:
+    <%= form.text_field :points %><br />
+  </div>
+  <%= submit_tag %>
+<% end %>

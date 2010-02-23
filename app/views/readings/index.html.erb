@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Taken On</th>
+      <th>Wieight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @readings.each do |reading| %>
+      <tr>
+        <td><%= reading.taken_on -%></td>
+        <td><%= reading.weight -%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

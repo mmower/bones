@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Week Beginning</th>
+      <th>Meals</th>
+      <th>Readings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @weeks.each do |week| %>
+      <tr>
+        <td><%= link_to week.begins, week_path( week ) -%></td>
+        <td><%= link_to 'meals', week_meals_path( week ) -%></td>
+        <td><%= link_to 'readings', week_readings_path( week ) -%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

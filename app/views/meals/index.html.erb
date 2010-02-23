@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Eaten On</th>
+      <th>For</th>
+      <th>Description</th>
+      <th>Points</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% total = 0.0 %>
+    <% @meals.each do |meal| %>
+      <% total += meal.points_value %>
+      <tr>
+        <td><%= meal.eaten_on -%></td>
+        <td><%= meal.kind -%></td>
+        <td><%= meal.description -%></td>
+        <td><span title="<%= "#{ meal.kcal } / #{meal.fat}" -%>"><%= "%.1f" % meal.points_value -%></span></td>
+        <td><%= "%.1f" % total -%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
