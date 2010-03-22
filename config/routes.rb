@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :days
+
   map.resources :weeks do |week|
     week.resources :meals
     week.resources :readings
@@ -6,6 +8,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :meals
   map.resources :readings
+  
+  map.resources :graphs
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -6,6 +6,12 @@ class MealsController < ApplicationController
     else
       Meal.find( :all, :order => 'eaten_on ASC, kind ASC' )
     end
+    
+    if params[:day]
+      render :action => 'index_by_day'
+    else
+      render :action => 'index'
+    end
   end
   
   def show
@@ -13,14 +19,19 @@ class MealsController < ApplicationController
   end
   
   def new
+    
+    @meals = Meal.asc_sort
+    
     @meal = Meal.new
     @meal.eaten_on = Date.today
     @meal.week = Week.for_date( Date.today )
+    
+    render :action => 'new', :layout => 'leftside'
   end
   
   def create
     @meal = Meal.create( params[:meal] )
-    redirect_to meals_path
+    redirect_to new_meal_path( :last_meal_id => @meal.id )
   end
   
   def edit

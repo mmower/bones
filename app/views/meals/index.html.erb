@@ -6,6 +6,7 @@
       <th>Description</th>
       <th>Points</th>
       <th>Total</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,7 @@
         <td><%= meal.description -%></td>
         <td><span title="<%= "#{ meal.kcal } / #{meal.fat}" -%>"><%= "%.1f" % meal.points_value -%></span></td>
         <td><%= "%.1f" % total -%></td>
+        <td><%= link_to icon_tag( 'cog_edit.png'), edit_meal_path( meal ) -%></td>
       </tr>
     <% end %>
   </tbody>

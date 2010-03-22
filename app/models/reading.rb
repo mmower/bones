@@ -1,6 +1,10 @@
 class Reading < ActiveRecord::Base
   belongs_to :week
   
+  def self.for_day( date )
+    find( :first, :conditions => { :taken_on => date } )
+  end
+  
   class Weight
     attr_accessor :grams
     
@@ -30,6 +34,6 @@ class Reading < ActiveRecord::Base
     :mapping => ['weight_in_grams','grams'],
     :allow_nil => false,
     :converter => Proc.new { |w| w.nil? ? Weight.new( 0 ) : Weight.new( Integer( w.to_f * 1000 ) ) },
-    :constructor => Proc.new { |w| puts "constructor #{w.inspect}"; Weight.new( w || 0 ) }
+    :constructor => Proc.new { |w| Weight.new( w || 0 ) }
   
 end

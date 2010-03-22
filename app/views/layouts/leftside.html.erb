@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <%= render :partial => 'shared/head' %>
+</head>
+
+<body>
+  <div class="container <%= @controller.controller_name %>_<%= @controller.action_name %>">
+    <div class="span-24"><%= render :partial => 'shared/nav' %></div>
+    <div class="span-16"><%= yield %></div>
+    <div class="span-8 last"><%= yield :sidebar %></div>
+    <div class="span-24">&copy;2010 by Matt Mower</div>
+  </div>
+</body>
+</html>

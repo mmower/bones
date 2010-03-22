@@ -1,4 +1,10 @@
+<h1>Todays Points</h1>
+<p><%= "%.1f" % @todays_points %></p>
+<h1>Tracking Meals</h1>
+<%= @last_30_days_meals %>
+<h1>Tracking Weight</h1>
+<%= @last_30_days_weights %>
 
-<% points = Meal.find( :all, :conditions => ['eaten_on = ?',Date.today] ).inject( 0.0 ) { |total,meal| total + meal.points_value } %>
 
-Points: <%= "%.1f" % points -%>
+
+

@@ -1,1 +1,28 @@
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('li.template-meal a').click( function() {
+      var li = $(this).parent();
+      
+      $('#meal_description').val( li.dataset( 'description' ) );
+      if( li.dataset( 'kcal' ) != '' ) {
+        $('#meal_kcal').val( li.dataset( 'kcal' ) );
+        $('#meal_fat').val( li.dataset( 'fat' ) );
+        $('#meal_points').val( '' );
+      } else {
+        $('#meal_kcal').val( '' );
+        $('#meal_fat').val( '' );
+        $('#meal_points').val( li.dataset( 'points' ) );
+      }
+      
+      return false;
+    })
+  });
+</script>
+<% content_for( :sidebar ) do %>
+<ul>
+<% @meals.each do |meal| %>
+  <li data-description='<%= meal.description -%>' data-kcal="<%= meal.kcal -%>" data-fat="<%= meal.fat -%>" data-points="<%= meal.points_value -%>" class="template-meal"><a href=""><%= meal.description %></a></li>
+<% end %>
+</ul>
+<% end %>
 <%= render :partial => "form" %>

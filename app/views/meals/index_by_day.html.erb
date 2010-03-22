@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Eaten On</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% summarize_by_day( @meals ).each do |date,points| %>
+      <tr>
+        <td><%= date -%></td>
+        <td><%= "%.1f" % points -%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

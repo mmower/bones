@@ -1,0 +1,158 @@
+
+
+ul li {
+	display: inline;
+}
+
+ul li a:hover, ul li.active a:hover {
+	color: #000;
+}
+
+ul {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+ul li.template-meal {
+  display: block;
+}
+
+
+#new_expense {
+	margin: 0 auto;
+	width: 220px;
+}
+
+#new_expense form {
+	padding: 10px 30px;
+}
+
+#new_expense .field {
+	margin: 10px 0 5px 0;
+}
+
+#new_expense .field label {
+/*  font-size: 16px;*/
+/*  font-weight: bold;*/
+/*  margin: 0 0 3px 0;*/
+/*  color: #6B6B6B;*/
+/*  width: 250px;*/
+}
+
+#new_expense .field input {
+	border-top: 1px solid #626262;
+	border-left: 1px solid #626262;
+	border-right: 1px solid #9E9E9E;
+	border-bottom: 1px solid #9E9E9E;
+	font-size: 15px;
+	padding: 3px;
+/*  background-image: url(/images/backgrounds/bg_field_login.png);*/
+	width: 200px;
+}
+
+#new_expense .field input.checkbox {
+}
+
+#new_expense input.submit {
+}
+
+
+
+form#new_payee.new_payee {
+  padding: 10px 30px;
+  background: #9E9E9E;
+}
+
+#new_payee {
+	margin: 0 auto;
+	width: 220px;
+}
+
+#new_payee .field {
+	margin: 10px 0 5px 0;
+}
+
+#new_payee .field label {
+	font-size: 13px;
+	font-weight: bold;
+	margin: 0 0 3px 0;
+	color: #6B6B6B;
+}
+
+#new_payee .field input {
+	border-top: 1px solid #626262;
+	border-left: 1px solid #626262;
+	border-right: 1px solid #9E9E9E;
+	border-bottom: 1px solid #9E9E9E;
+	font-size: 13px;
+	padding: 3px;
+	width: 200px;
+}
+
+#new_payee .field input.checkbox {
+}
+
+#new_payee input.submit {
+}
+
+/* Periods Pages */
+
+form.edit_period {
+  padding: 10px 30px;
+  margin: 0 auto;
+  width: 220px;
+  background: #9E9E9E;
+}
+
+form.edit_period .field {
+  margin: 10px 0 5px 0;
+}
+
+form.edit_period .field label {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 0 3px 0;
+  color: #6B6B6B;
+}
+
+form.edit_period .field input {
+  border-top: 1px solid #626262;
+	border-left: 1px solid #626262;
+	border-right: 1px solid #9E9E9E;
+	border-bottom: 1px solid #9E9E9E;
+	font-size: 13px;
+	padding: 3px;
+	width: 200px;
+}
+
+
+/* Expenses Pages */
+
+/* Budget Pages */
+
+table.budgets th {
+  text-align: right;
+}
+
+table.budgets td {
+  text-align: right;
+}
+
+/* Payees Pages */
+
+table.payees caption {
+  text-align: right;
+}
+
+table.payees caption span.period {
+  font-size: 9px;
+  font-weight: bold;
+}
+
+table.payees th {
+  text-align: right;
+}
+
+table.payees td {
+  text-align: right;
+}
